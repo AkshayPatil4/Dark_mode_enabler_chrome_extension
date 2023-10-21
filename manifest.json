@@ -1,0 +1,34 @@
+{
+  "manifest_version": 3,
+  "name": "Dark Mode Enabler",
+  "version": "1.0",
+  "description": "Enable dark mode on websites",
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  },
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "permissions": ["activeTab", "storage"],
+  "web_accessible_resources": [
+    {
+      "resources": ["dark-mode.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+  
+}
